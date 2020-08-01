@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/items.css' %}">
+    </head>
+
+    <body>
+        <a href="/logout/" class="logout-button">Logout</a>
+        <h2>Items list</h2>
+
+        {% if inventories.count == 0 %}
+            Sorry no items are available to place order.
+        {% endif %}
+
+        {% for inventory in inventories %}
+            <div class="card">
+                <img src="{{ inventory.item.picture.url }}" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <h4><b>{{inventory.item.item_name}}</b></h4> 
+                    <p>Stock: {{inventory.item_count}}</p>
+                    <p>Price: {{inventory.item.item_price}}</p>
+
+                    <form action="/order/{{inventory.id}}" method="POST">{% csrf_token %}
+                        <label for="quantity">Order count:</label>
+                        <input type="number" id="order_count" name="order_count" min="1" max="{{inventory.item_count}}">
+                        <input type="submit" value="Order">
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </body>
+</html> 

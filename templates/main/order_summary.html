@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/items.css' %}">
+    </head>
+
+    <body>
+        <a href="/logout/" class="logout-button">Logout</a>
+        <div class="card" style="position: absolute; left: 29%; top: 13%;">
+            <h2 style="color: green; text-align: center">Your order placed successfully!</h2>
+            <img src="{{ picture_url }}" alt="Avatar" style="width:100%">
+            <div class="container">
+                <p style="text-align: right"><b>Order ID:</b> {{order_id}}</p>
+                <h4 style="text-align: center"><b>{{item_name}}</b></h4>
+                <p style="text-align: center">Order count: {{order_count}}</p>
+                <p style="text-align: center">Price: {{item_price}}</p>
+                <p style="text-align: right">{{item_price}} x {{order_count}}</p>
+                <p style="text-align: right"><b>Total:</b> {{total_price}}</p>
+            </div>
+        </div>
+        <a style="margin: 20px" href="/items/">Go to items list</a>
+    </body>
+</html>
