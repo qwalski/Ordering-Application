@@ -24,3 +24,13 @@ i) username -> admin1<br/>
    <br/>
 ii) username -> admin2<br/>
     password -> password<br/>
+
+## Screenshots of Django Application
+### Login Page
+<img src = "https://github.com/qwalski/Ordering-Application/blob/master/Readme_Images/login%20page.png" />
+
+### Inventory Page
+<img src = "https://github.com/qwalski/Ordering-Application/blob/master/Readme_Images/Inventory%20page.png" />
+
+### Order Details Page
+<img src = "https://github.com/qwalski/Ordering-Application/blob/master/Readme_Images/Order%20details%20page.png" />
